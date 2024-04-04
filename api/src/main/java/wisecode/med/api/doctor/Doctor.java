@@ -26,13 +26,36 @@ public class Doctor {
     private Specialty specialty;
     @Embedded
     private Address address;
+    private boolean active;
 
     public Doctor(DoctorRegistrationData data) {
+        this.active = true;
         this.name = data.name();
         this.email = data.email();
         this.telephone = data.telephone();
         this.crm = data.crm();
         this.address = new Address(data.address());
         this.specialty = data.specialty();
+    }
+
+    public void updateInformation(DoctorUpdateData data) {
+        if(data.name() != null){
+            this.name = data.name();
+
+        }
+        if(data.telephone() != null){
+            this.telephone = data.telephone();
+        }
+        if(data.address() != null ) {
+            this.address.updateInformation(data.address());
+        }
+
+
+
+
+    }
+
+    public void delete() {
+        this.active = false;
     }
 }
