@@ -7,10 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import wisecode.med.api.doctor.Doctor;
-import wisecode.med.api.doctor.DoctorListingData;
-import wisecode.med.api.doctor.DoctorRegistrationData;
-import wisecode.med.api.doctor.DoctorRepository;
+import wisecode.med.api.doctor.*;
 
 import java.util.List;
 
@@ -28,6 +25,20 @@ public class DoctorController {
 
     @GetMapping
     public Page<DoctorListingData> findAll(@PageableDefault(size = 10, sort = {"name"}) Pageable pagination) {
-        return repository.findAll(pagination).map(DoctorListingData::new);
+        return repository.findAllByActiveTrue(pagination).map(DoctorListingData::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void update(@RequestBody @Valid DoctorUpdateData data) {
+        var doctor = repository.getReferenceById(data.id());
+        doctor.updateInformation(data);
+    }
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void delete(@PathVariable Long id) {
+        var doctor = repository.getReferenceById(id);
+        doctor.delete();
+
     }
 }

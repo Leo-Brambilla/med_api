@@ -27,4 +27,29 @@ public class Address {
         this.neighborhood = data.neighborhood();
         this.zip_code = data.zip_code();
     }
+
+    public void updateInformation(AddressData data) {
+      if(data.street() != null){
+          this.street = data.street();
+      }
+      if(data.city() != null){
+            this.city = data.city();
+      }
+      if(data.state() != null){
+            this.state = data.state();
+      }
+      if(data.number() != null){
+            this.number = data.number();
+      }
+      if(data.complement() != null){
+            this.complement = data.complement();
+      }
+      if(data.neighborhood() != null){
+            this.neighborhood = data.neighborhood();
+      }
+      if(data.zip_code() != null){
+            this.zip_code = data.zip_code();
+      }
+
+    }
 }
