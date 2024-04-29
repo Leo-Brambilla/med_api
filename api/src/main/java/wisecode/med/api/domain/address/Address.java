@@ -1,4 +1,4 @@
-package wisecode.med.api.address;
+package wisecode.med.api.domain.address;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

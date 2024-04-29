@@ -1,11 +1,11 @@
-package wisecode.med.api.doctor;
+package wisecode.med.api.domain.doctor;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import wisecode.med.api.address.Address;
+import wisecode.med.api.domain.address.Address;
 
 
 @Table(name = "doctors")

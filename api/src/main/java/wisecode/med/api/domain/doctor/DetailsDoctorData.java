@@ -1,6 +1,6 @@
-package wisecode.med.api.doctor;
+package wisecode.med.api.domain.doctor;
 
-import wisecode.med.api.address.Address;
+import wisecode.med.api.domain.address.Address;
 
 public record DetailsDoctorData(Long id, String name, String email, String crm, String telephone, Specialty specialty, Address address ) {
     public DetailsDoctorData(Doctor doctor) {

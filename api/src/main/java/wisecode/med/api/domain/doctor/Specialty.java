@@ -1,4 +1,4 @@
-package wisecode.med.api.doctor;
+package wisecode.med.api.domain.doctor;
 
 public enum Specialty {
 

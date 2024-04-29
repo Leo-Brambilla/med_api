@@ -9,10 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import wisecode.med.api.doctor.*;
-
-import java.net.URI;
-import java.util.List;
+import wisecode.med.api.domain.doctor.*;
 
 @RestController
 @RequestMapping("/doctors")
