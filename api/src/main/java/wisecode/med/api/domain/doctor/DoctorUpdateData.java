@@ -1,8 +1,8 @@
-package wisecode.med.api.doctor;
+package wisecode.med.api.domain.doctor;
 
 import jakarta.validation.constraints.NotNull;
 
-import wisecode.med.api.address.AddressData;
+import wisecode.med.api.domain.address.AddressData;
 
 public record DoctorUpdateData(
         @NotNull

@@ -1,4 +1,4 @@
-package wisecode.med.api.doctor;
+package wisecode.med.api.domain.doctor;
 
 public record DoctorListingData(Long id, String name, String email, String crm, Specialty specialty) {
 
